@@ -88,12 +88,13 @@ footer {
     padding: 20px;
     background-color: rgba(0, 0, 0, 0.8);
     border-top: 2px solid #a8ff3e;
-    margin-top: 50px;
+    margin-top: 90px;
 }
 
 footer h6 {
     color: #a8ff3e;
     font-size: 1rem;
+    
 }
 
 /* Floating skeleton face */
