@@ -1,20 +1,18 @@
 function validate() {
-    var username = document.login.username.value.trim();
-    var password = document.login.password.value;
+    const username = document.login.username.value.trim();
+    const password = document.login.password.value;
 
-    // Basic validation: check if username and password are entered
-    if (!username || !password) {
-        alert("Please enter both username and password.");
-        return false;
-    }
-
-    // Example hardcoded credentials (replace with your own authentication logic)
+    // Example hardcoded credentials
     if (username === "aryan123" && password === "aryannew") {
-        // Store username in sessionStorage for use on the welcome page
+        // Store username in sessionStorage
         sessionStorage.setItem("username", username);
-        return true; // Allow form to submit and redirect to welcome.html
+
+        // Redirect using JS to avoid GitHub Pages form POST issues
+        window.location.href = "welcome.html";
+        return false; // prevent form submission
     } else {
         alert("Incorrect username or password.");
-        return false; // Prevent form submission
+        return false; // prevent form submission
     }
 }
+
