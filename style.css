@@ -7,7 +7,7 @@ body {
     color: #a8ff3e; /* Parrot Green */
     font-family: 'Creepster', cursive;
 
-    background-image: url('https://img.freepik.com/premium-photo/skeleton-with-wings-that-says-angel-it_909213-4243.jpg');
+    background-image: url('https://sdmntprnorthcentralus.oaiusercontent.com/files/00000000-721c-622f-a97d-2a45823fe7e1/raw?se=2025-04-27T17%3A25%3A26Z&sp=r&sv=2024-08-04&sr=b&scid=8c97fde0-fb77-5bcb-9af9-88db6296e75c&skoid=d958ec58-d47c-4d2f-a9f2-7f3e03fdcf72&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-04-27T14%3A45%3A30Z&ske=2025-04-28T14%3A45%3A30Z&sks=b&skv=2024-08-04&sig=HI39Rzo1uLk/RPlsRb%2B6%2BbMggktFNPsrCIbR4ymYyzU%3D');
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -89,13 +89,11 @@ footer {
     background-color: rgba(0, 0, 0, 0.8);
     border-top: 2px solid #a8ff3e;
     margin-top: 50px;
-    
 }
 
 footer h6 {
     color: #a8ff3e;
     font-size: 1rem;
-    
 }
 
 /* Floating skeleton face */
@@ -182,4 +180,4 @@ footer h6 {
     .skeleton-face {
         width: 60px;
     }
-}   
+}
