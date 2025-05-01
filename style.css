@@ -5,12 +5,13 @@ body {
     padding: 0;
   
     color: #a8ff3e; /* Parrot Green */
-    font-family: 'Creepster', cursive;
+    font-family: 'Creepster', 'cursive';
 
-    background-image: url('https://sdmntprnorthcentralus.oaiusercontent.com/files/00000000-721c-622f-a97d-2a45823fe7e1/raw?se=2025-04-27T17%3A25%3A26Z&sp=r&sv=2024-08-04&sr=b&scid=8c97fde0-fb77-5bcb-9af9-88db6296e75c&skoid=d958ec58-d47c-4d2f-a9f2-7f3e03fdcf72&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-04-27T14%3A45%3A30Z&ske=2025-04-28T14%3A45%3A30Z&sks=b&skv=2024-08-04&sig=HI39Rzo1uLk/RPlsRb%2B6%2BbMggktFNPsrCIbR4ymYyzU%3D');
+    
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
+    background-image: url('https://sdmntprnorthcentralus.oaiusercontent.com/files/00000000-721c-622f-a97d-2a45823fe7e1/raw?se=2025-04-27T17%3A25%3A26Z&sp=r&sv=2024-08-04&sr=b&scid=8c97fde0-fb77-5bcb-9af9-88db6296e75c&skoid=d958ec58-d47c-4d2f-a9f2-7f3e03fdcf72&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-04-27T14%3A45%3A30Z&ske=2025-04-28T14%3A45%3A30Z&sks=b&skv=2024-08-04&sig=HI39Rzo1uLk/RPlsRb%2B6%2BbMggktFNPsrCIbR4ymYyzU%3D');
 }
 
 header {
@@ -47,6 +48,7 @@ header .logo img {
     border-radius: 10px;
     box-shadow: 0 0 20px #a8ff3e;
 }
+    
 form{
     width: 100%;
     height: 100%;
@@ -97,14 +99,7 @@ footer h6 {
 }
 
 /* Floating skeleton face */
-.skeleton-face {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    width: 100px;
-    opacity: 0.8;
-    animation: floatSkeleton 5s ease-in-out infinite;
-}
+
 
 @keyframes floatSkeleton {
     0% { transform: translateY(0px); }
