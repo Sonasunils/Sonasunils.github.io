@@ -1,82 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome</title>
-    <link rel="stylesheet" href="style.css">
-    <style>
-        /* Fullscreen GIF styling */
-        #gifContainer {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            background-color: black;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 999;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Welcome</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+      font-family: sans-serif;
+    }
 
-        #introGif {
-            max-width: 100%;
-            max-height: 100%;
-        }
+    #videoContainer {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: 0;
+    }
 
-        .main-content {
-            display: none; /* Hidden until GIF finishes */
-            z-index: 1;
-            position: relative;
-            text-align: center;
-            padding-top: 50px;
-        }
-    </style>
+    video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    #greeting {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      font-size: 2rem;
+      z-index: 2;
+      display: none;
+    }
+  </style>
 </head>
 <body>
-    <!-- Full-screen GIF container -->
-    <div id="gifContainer">
-        <img src="new.gif" id="introGif" alt="Intro Animation" />
-    </div>
+  <div id="videoContainer">
+    <video autoplay muted>
+      <source src="yourvideo.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+  </div>
 
-    <!-- Main content shown after 6 seconds -->
-    <div class="main-content container">
-        <header>
-            <div class="logo">
-                <img src="http://clipart-library.com/images_k/skull-logo-transparent/skull-logo-transparent-4.png" alt="ShadowMind Skull Logo">
-            </div>
-            <div class="news">ShadowMind</div>
-        </header>
+  <h2 id="greeting"></h2>
 
-        <h2 id="greeting">Welcome!</h2>
+  <script>
+    window.onload = function () {
+      const username = sessionStorage.getItem("username") || "Guest";
+      const greeting = document.getElementById("greeting");
 
-        <footer class="text-center mt-4">
-            <h6>&copy; ShadowMind</h6>
-        </footer>
-    </div>
-
-    <script>
-        window.onload = function () {
-            const username = sessionStorage.getItem("username");
-            const greetingElement = document.getElementById("greeting");
-            const gifContainer = document.getElementById("gifContainer");
-            const mainContent = document.querySelector('.main-content');
-
-            
-            setTimeout(() => {
-                gifContainer.style.display = "none";
-                if (username) {
-                    greetingElement.textContent = "Welcome, " + username.trim(123)+ "!";
-                } else {
-                    greetingElement.textContent = "Welcome, Guest!";
-                }
-                mainContent.style.display = "block";
-            }, 1000); 
-        };
-    </script>
+      setTimeout(() => {
+        greeting.textContent = `Welcome, ${username}!`;
+        greeting.style.display = "block";
+      }, 1000); // Show after 6 seconds
+    };
+  </script>
 </body>
 </html>
+
 
 
 

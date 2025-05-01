@@ -1,18 +1,14 @@
 function validate() {
     const username = document.login.username.value.trim();
     const password = document.login.password.value;
-
-    // Example hardcoded credentials
+  
     if (username === "aryan123" && password === "aryannew") {
-        // Store username in sessionStorage
-        sessionStorage.setItem("username", username);
-
-        // Redirect using JS to avoid GitHub Pages form POST issues
-        window.location.href = "welcome.html";
-        return false; // prevent form submission
+      sessionStorage.setItem("username", username);
+      window.location.href = "welcome.html"; // no 405, just JS redirect
+      return false;
     } else {
-        alert("Incorrect username or password.");
-        return false; // prevent form submission
+      alert("Incorrect username or password.");
+      return false;
     }
-}
-
+  }
+  

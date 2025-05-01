@@ -10,36 +10,28 @@
 </head>
 <body>
   <header class="text-center p-3 bg-dark text-white">
-    <div class="logo mb-2">
-      <img src="http://clipart-library.com/images_k/skull-logo-transparent/skull-logo-transparent-4.png" alt="ShadowMind Skull Logo" style="height: 80px;" />
-    </div>
-    <h2 class="news">ShadowMind</h2>
+    <img src="http://clipart-library.com/images_k/skull-logo-transparent/skull-logo-transparent-4.png" alt="Logo" height="80" />
+    <h2>ShadowMind</h2>
   </header>
 
-  <div class="main container mt-5">
+  <div class="container mt-5">
     <form name="login" onsubmit="return validate()">
       <div class="form-group">
-        <label for="username">User name</label>
+        <label for="username">Username</label>
         <input type="text" class="form-control" id="username" name="username" required />
-        <small class="form-text text-muted">Enter your registered username.</small>
       </div>
       <div class="form-group">
         <label for="password">Password</label>
         <input type="password" class="form-control" id="password" name="password" required />
       </div>
-
-      <div class="form-group form-check">
-        <input type="checkbox" class="form-check-input" id="rememberMe" />
-        <label class="form-check-label" for="rememberMe">Remember me</label>
-      </div>
-
-      <button type="submit" class="btn btn-outline-success">Login</button>
+      <button type="submit" class="btn btn-success">Login</button>
     </form>
   </div>
 
-  <footer class="text-center mt-5 p-3 bg-light">
-    <h6>&copy; ShadowMind</h6>
+  <footer class="text-center mt-5">
+    <small>&copy; ShadowMind</small>
   </footer>
 </body>
 </html>
+
 
