@@ -6,29 +6,14 @@
   <title>Welcome</title>
   <link rel="stylesheet" href="style.css" />
   <style>
-    /* Fullscreen GIF styling */
-    #gifContainer {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      background-color: black;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      z-index: 999;
-    }
-
     html, body {
       height: 100%;
       margin: 0;
-      display: flex;
-      flex-direction: column;
     }
 
     body {
-      flex: 1;
+      display: flex;
+      flex-direction: column;
       background-image: url('https://i.pinimg.com/originals/e8/f9/15/e8f91522d2ec4f30a7c45fa236d56d35.jpg');
       background-size: cover;
       background-repeat: no-repeat;
@@ -38,17 +23,16 @@
     }
 
     .main-wrapper {
-      flex: 1;
+      flex: 1; /* Takes up remaining space */
       display: flex;
       flex-direction: column;
+      justify-content: space-between;
     }
 
     .main-content {
       display: none;
-      z-index: 1;
-      position: relative;
-      text-align: center;
       padding: 50px 20px;
+      text-align: center;
     }
 
     header .logo img {
@@ -70,12 +54,30 @@
       border-radius: 10px;
     }
 
+    footer {
+      text-align: center;
+      padding: 20px 0;
+      background-color: rgba(0, 0, 0, 0.4);
+    }
+
     footer h6 {
-      margin-top: 40px;
+      margin: 0;
       color: white;
     }
 
-    /* Custom Alert Styles */
+    #gifContainer {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 999;
+    }
+
     .custom-alert {
       position: fixed;
       top: 50%;
@@ -128,7 +130,7 @@
     <img src="new.gif" id="introGif" alt="Intro Animation" />
   </div>
 
-  <!-- Page content wrapper -->
+  <!-- Main content with header, content, and footer -->
   <div class="main-wrapper">
     <div class="main-content container">
       <header>
@@ -139,11 +141,10 @@
       </header>
 
       <h2 id="greeting">Welcome!</h2>
-
       <div id="taskMessage">Hi Aryan, your first task is: upload your selfie</div>
     </div>
 
-    <footer class="text-center mt-4">
+    <footer>
       <h6>&copy; ShadowMind</h6>
     </footer>
   </div>
@@ -166,7 +167,7 @@
       // Show main content after intro GIF
       setTimeout(() => {
         gifContainer.style.display = "none";
-        greetingElement.textContent = username ? "Welcome, ARYAN!" : "Welcome, ARYAN!";
+        greetingElement.textContent = username ? `Welcome, ${username.toUpperCase()}!` : "Welcome, ARYAN!";
         mainContent.style.display = "block";
 
         // Show creepy alert after 3s
@@ -183,6 +184,7 @@
   </script>
 </body>
 </html>
+
 
 
 
