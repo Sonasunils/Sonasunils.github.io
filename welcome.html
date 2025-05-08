@@ -1,83 +1,178 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome</title>
-    <link rel="stylesheet" href="style.css">
-    <style>
-        /* Fullscreen GIF styling */
-        #gifContainer {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            background-color: black;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 999;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Welcome</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Fullscreen GIF styling */
+    #gifContainer {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 999;
+    }
 
-        #introGif {
-            max-width: 100%;
-            max-height: 100%;
-        }
+    #introGif {
+      max-width: 100%;
+      max-height: 100%;
+    }
 
-        .main-content {
-            display: none; /* Hidden until GIF finishes */
-            z-index: 1;
-            position: relative;
-            text-align: center;
-            padding-top: 50px;
-        }
-    </style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-image: url('https://i.pinimg.com/originals/e8/f9/15/e8f91522d2ec4f30a7c45fa236d56d35.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      color: white;
+      font-family: 'Arial', sans-serif;
+    }
+
+    .main-content {
+      display: none;
+      z-index: 1;
+      position: relative;
+      text-align: center;
+      padding: 50px 20px;
+    }
+
+    header .logo img {
+      height: 80px;
+    }
+
+    .news {
+      font-size: 2em;
+      margin-top: 10px;
+    }
+
+    #taskMessage {
+      margin-top: 30px;
+      font-size: 1.2em;
+      font-weight: bold;
+      display: none;
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 15px;
+      border-radius: 10px;
+    }
+
+    footer h6 {
+      margin-top: 40px;
+    }
+
+    /* Custom Alert Styles */
+    .custom-alert {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #2b0000;
+      color: #ff4d4d;
+      border: 2px solid #ff0000;
+      padding: 20px 30px;
+      border-radius: 10px;
+      z-index: 1000;
+      box-shadow: 0 0 30px red;
+      font-family: 'Courier New', Courier, monospace;
+      text-align: center;
+      max-width: 90%;
+    }
+
+    .custom-alert button {
+      margin-top: 15px;
+      background-color: black;
+      color: #ff4d4d;
+      border: 1px solid red;
+      padding: 8px 16px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    .custom-alert button:hover {
+      background-color: red;
+      color: black;
+    }
+
+    @media (max-width: 600px) {
+      .news {
+        font-size: 1.5em;
+      }
+      #taskMessage {
+        font-size: 1em;
+      }
+      header .logo img {
+        height: 60px;
+      }
+    }
+  </style>
 </head>
 <body>
-    <!-- Full-screen GIF container -->
-    <div id="gifContainer">
-        <img src="new.gif" id="introGif" alt="Intro Animation" />
-    </div>
+  <!-- Full-screen GIF container -->
+  <div id="gifContainer">
+    <img src="new.gif" id="introGif" alt="Intro Animation" />
+  </div>
 
-    <!-- Main content shown after 6 seconds -->
-    <div class="main-content container">
-        <header>
-            <div class="logo">
-                <img src="http://clipart-library.com/images_k/skull-logo-transparent/skull-logo-transparent-4.png" alt="ShadowMind Skull Logo">
-            </div>
-            <div class="news">ShadowMind</div>
-        </header>
+  <!-- Main content -->
+  <div class="main-content container">
+    <header>
+      <div class="logo">
+        <img src="http://clipart-library.com/images_k/skull-logo-transparent/skull-logo-transparent-4.png" alt="ShadowMind Skull Logo" />
+      </div>
+      <div class="news">ShadowMind</div>
+    </header>
 
-        <h2 id="greeting">Welcome!</h2>
+    <h2 id="greeting">Welcome!</h2>
 
-        <footer class="text-center mt-4">
-            <h6>&copy; ShadowMind</h6>
-        </footer>
-    </div>
+    <div id="taskMessage">Hi Aryan, your first task is: upload your selfie</div>
 
-    <script>
-        window.onload = function () {
-            const username = sessionStorage.getItem("username");
-            const greetingElement = document.getElementById("greeting");
-            const gifContainer = document.getElementById("gifContainer");
-            const mainContent = document.querySelector('.main-content');
+    <footer class="text-center mt-4">
+      <h6>&copy; ShadowMind</h6>
+    </footer>
+  </div>
 
-            
-            setTimeout(() => {
-                gifContainer.style.display = "none";
-                if (username) {
-                    greetingElement.textContent = "Welcome, " + username.trim(123)+ "!";
-                } else {
-                    greetingElement.textContent = "Welcome, Guest!";
-                }
-                mainContent.style.display = "block";
-            }, 1000); 
-        };
-    </script>
+  <!-- Custom Alert Box -->
+  <div id="customAlert" class="custom-alert" style="display: none;">
+    <p>Hi Aryan, your first task is: upload your selfie</p>
+    <button onclick="closeAlert()">Got it</button>
+  </div>
+
+  <script>
+    window.onload = function () {
+      const username = sessionStorage.getItem("username");
+      const greetingElement = document.getElementById("greeting");
+      const gifContainer = document.getElementById("gifContainer");
+      const mainContent = document.querySelector('.main-content');
+      const taskMessage = document.getElementById("taskMessage");
+      const customAlert = document.getElementById("customAlert");
+
+      // Show main content after intro GIF
+      setTimeout(() => {
+        gifContainer.style.display = "none";
+        greetingElement.textContent = username ? "Welcome, ARYAN!" : "Welcome, Guest!";
+        mainContent.style.display = "block";
+
+        // Show creepy alert after 3s
+        setTimeout(() => {
+          customAlert.style.display = "block";
+          taskMessage.style.display = "block";
+        }, 3000);
+      }, 1600);
+    };
+
+    function closeAlert() {
+      document.getElementById("customAlert").style.display = "none";
+    }
+  </script>
 </body>
 </html>
-
 
 
 
